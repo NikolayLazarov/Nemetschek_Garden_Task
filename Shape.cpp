@@ -19,3 +19,8 @@ Point Shape::getCentralPoint(){
 double Shape::getRotationAngle(){
   return rotationAngle;
 }
+
+
+double Shape::area(){
+  
+}

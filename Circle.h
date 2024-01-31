@@ -1,9 +1,10 @@
 #include <iostream>
 #include "Shape.h"
+#include "Plant.h"
 using namespace std;
 #pragma once
 
-class Circle: Shape{
+class Circle: public Shape, public Plant{
   protected:
     double radius;
   
@@ -13,7 +14,7 @@ class Circle: Shape{
   
     double getRadius();
   
-    double area();
+    double area() override;
 
 
 

@@ -1,5 +1,6 @@
 #include "Shape.h"
 using namespace std;
+#pragma once
 
 class Rectangle: public Shape{
   protected:

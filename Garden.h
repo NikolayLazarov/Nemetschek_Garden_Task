@@ -2,12 +2,18 @@
 #include "Point.h"
 #include "Shape.h"
 #include "Rectangle.h"
+#include "Circle.h"
 using namespace std;
 #pragma once
 
 class Garden: public Rectangle {
+  private:
+  void resizeListPlants();
+
   protected:
-  // Plant listPlants;
+  Circle *listPlants;
+  int sizeListPlants;
+  int currentPlants;
   
   
   public:
@@ -16,8 +22,11 @@ class Garden: public Rectangle {
   Garden(double width, double length, double rotation);
 
   double freeArea();
-  double addPlant();
+  bool addPlant(Circle *plant);
+
+  void printGarden();
 
   // double checkIfPlantFits(Plant plant);
+  ~Garden();
   
 };

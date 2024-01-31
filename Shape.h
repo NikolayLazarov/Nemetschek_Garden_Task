@@ -13,7 +13,7 @@ class Shape{
     Shape(double x, double y, double rotation);
 
     double getRotationAngle();
-    Point getCentralPoint();
+    virtual Point getCentralPoint();
 
-    // virtual double area() = 0;
+    virtual double area() = 0;
 };
