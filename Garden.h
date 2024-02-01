@@ -3,6 +3,7 @@
 #include "Shape.h"
 #include "Rectangle.h"
 #include "Circle.h"
+#include <vector>
 using namespace std;
 #pragma once
 
@@ -11,7 +12,8 @@ class Garden: public Rectangle {
   void resizeListPlants();
 
   protected:
-  Circle *listPlants;
+  Shape **listPlants;
+  // vector<Shape *> listPlants; 
   int sizeListPlants;
   int currentPlants;
   
@@ -22,7 +24,7 @@ class Garden: public Rectangle {
   Garden(double width, double length, double rotation);
 
   double freeArea();
-  bool addPlant(Circle *plant);
+  bool addPlant(Shape *plant);
 
   void printGarden();
 

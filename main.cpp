@@ -14,12 +14,20 @@ Garden userinputGarden();
 int main(){
    Garden *gardenPointer =  new Garden(userinputGarden());
 
-  Circle *circlePointer = NULL;
+  Shape *circlePointer = NULL;
 
   cout<<gardenPointer->area() <<endl;
-  for (int i = 0; i <10;i++){
+  
+
+  
+  for (int i = 0; i <3;i++){
+    cout<<"new"<<endl;
     circlePointer = new Circle(i,2*i,3*i,i); 
     gardenPointer->addPlant(circlePointer);
+    
+    circlePointer = new Hexagon(2,3,34,234);
+    gardenPointer->addPlant(circlePointer);
+    gardenPointer->printGarden();
   }
     gardenPointer->printGarden();
 
