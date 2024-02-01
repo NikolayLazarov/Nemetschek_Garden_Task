@@ -42,7 +42,14 @@ bool Garden::addPlant(Shape *plant){
   return true;
 }
 
+void Garden::deleteData(){
+  for (int i = 0; i<currentPlants;i++){
+    delete listPlants[i];
+  }
+}
+
 Garden::~Garden(){
+  deleteData();
   delete [] listPlants;
 }
 

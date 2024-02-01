@@ -10,7 +10,8 @@ using namespace std;
 class Garden: public Rectangle {
   private:
   void resizeListPlants();
-
+  void deleteData();
+  
   protected:
   Shape **listPlants;
   // vector<Shape *> listPlants; 
