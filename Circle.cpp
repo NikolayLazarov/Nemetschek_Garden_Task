@@ -3,7 +3,6 @@
 #include <cmath>
 #include <iostream>
 #include "Circle.h"
-// #include "Shape.h"
 using namespace std;
 
 Circle::Circle(){

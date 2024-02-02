@@ -1,8 +1,11 @@
 #include "Garden.h"
 #include "Circle.h"
+#include "Shape.h"
+#include "checkQuantityCircles.h"
+#include "checkQuantityHexagon.h"
+#include "checkQuantityOvals.h"
+#include "checkQuantityTriangels.h"
 using namespace std;
-
-// Garden::Garden();
 
 Garden::Garden(double widthGarden, double lengthGarden, double rotation){
   width = widthGarden;
@@ -16,23 +19,16 @@ Garden::Garden(double widthGarden, double lengthGarden, double rotation){
 }
 
 void Garden::resizeListPlants(){
-  cout<<"here1"<<endl;
   Shape **resize = new Shape*[sizeListPlants *2];
-  cout<<"here2"<<endl;
   for (int i = 0; i< sizeListPlants; i++){
       resize[i] = listPlants[i];
   }
-  cout<<"here3"<<endl;
   delete [] listPlants;
-  cout<<"here4"<<endl;
   listPlants = resize;
   sizeListPlants *=2;
 }
 
 bool Garden::addPlant(Shape *plant){
-  //check if it fits -> if not false
-  //if true:
-  
   if (currentPlants == sizeListPlants){
     resizeListPlants();
   }
@@ -41,6 +37,20 @@ bool Garden::addPlant(Shape *plant){
   currentPlants++;
   return true;
 }
+
+  int Garden::checkQuantityPlants(Shape *plant, string typePlant){
+    int quantity;
+    if (typePlant == "circle"){
+        quantity = checkQuantityCircles(width,length,plant->getRadius());
+    }else if (typePlant == "hexagon"){
+      quantity = checkQuantityHexagon(width,length, plant->getSide());
+    }else if (typePlant == "Oval"){
+      quantity = checkQuantityOvals(width,length,plant->getRadiusX(),plant->getRadiusY());
+    }else if (typePlant == "Triangle"){
+      quantity = checkQuantityTriangels(width,length,plant->getSide());
+    }  
+    return quantity;
+  }
 
 void Garden::deleteData(){
   for (int i = 0; i<currentPlants;i++){

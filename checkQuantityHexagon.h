@@ -1,0 +1,1 @@
+int checkQuantityHexagon(double aRect, double bRect, double sideHex);

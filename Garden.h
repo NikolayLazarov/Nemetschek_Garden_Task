@@ -3,33 +3,29 @@
 #include "Shape.h"
 #include "Rectangle.h"
 #include "Circle.h"
-#include <vector>
+#include <string>
 using namespace std;
 #pragma once
 
-class Garden: public Rectangle {
+class Garden: public Rectangle{
   private:
   void resizeListPlants();
   void deleteData();
   
   protected:
   Shape **listPlants;
-  // vector<Shape *> listPlants; 
   int sizeListPlants;
   int currentPlants;
   
   
   public:
-  Garden();
-  // Garden(double xCord, double yCord, double rotation, double width, double length);
   Garden(double width, double length, double rotation);
 
-  double freeArea();
   bool addPlant(Shape *plant);
+  int checkQuantityPlants(Shape * plant, string type);
 
   void printGarden();
 
-  // double checkIfPlantFits(Plant plant);
   ~Garden();
   
 };

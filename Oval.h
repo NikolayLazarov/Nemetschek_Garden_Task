@@ -2,7 +2,7 @@
 using namespace std;
 #pragma once
 
-class Oval: Shape{
+class Oval: public Shape{
   protected:
     double radiusX;
     double radiusY;

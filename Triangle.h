@@ -4,7 +4,7 @@
 using namespace std;
 #pragma once
 
-class Triangle: Shape{
+class Triangle: public Shape{
   protected:
     double side;
 

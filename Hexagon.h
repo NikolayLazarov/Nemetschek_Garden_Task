@@ -1,9 +1,8 @@
 #include "Shape.h"
-#include "Plant.h"
 using namespace std;
 #pragma once
 
-class Hexagon: public Shape, public Plant{
+class Hexagon: public Shape{
   protected:
     double side;
 

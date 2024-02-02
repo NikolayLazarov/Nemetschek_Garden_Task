@@ -1,24 +1,21 @@
-#include "GardenInput.h"
+#include "createGarden.h"
+#include <iostream>
+#include "userInputCheckerDouble.h"
 
 using namespace std;
 
-Garden userinputGarden()
+Garden createGarden()
   {
   while (true){
     bool exceptionFlag = false;
     
-    double width;
-    double length;
-    double rotationAngle;
-
+    double width, length, rotationAngle;
+    double * dataPointer = NULL;
+    
     try{  
       cout<<"Garden:"<<endl;
       cout<<"Enter width: "<<endl;
 
-      // if (checkUserInputGarden(*width) == false && *width == NULL){
-      //   cout<<"good";
-      // }
-      // if (width < 0){
         while (true){
           if (cin >> width) {
             if (width < 0){
@@ -29,9 +26,7 @@ Garden userinputGarden()
           throw "Invalid input. Please enter a valid double.";
         }
       }
-      // }
       
-      // if (length < 0){
           cout<<"Enter length: "<<endl;
       while (true){
           if (cin >> length) {
@@ -43,22 +38,14 @@ Garden userinputGarden()
           throw "Invalid input. Please enter a valid double.";
         }
       }
-      // }
       
-
       cout<<"Enter rotation angle: "<<endl;
+      dataPointer = &rotationAngle;
 
-      while (true){
-          if (cin >> rotationAngle) {
-            break;   
-        } else {
-          throw "Invalid input. Please enter a valid double.";
-        }
-      }
+      userInputCheckerDouble(dataPointer);
 
     }catch (const char* msg){
       cerr << msg <<endl;
-      //  cout <<  <<endl;
             cin.clear();
             while (cin.get() != '\n') ;
       exceptionFlag = true;

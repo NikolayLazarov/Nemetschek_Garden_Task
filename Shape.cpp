@@ -24,3 +24,19 @@ double Shape::getRotationAngle(){
 double Shape::area(){
   
 }
+
+double Shape::getRadius(){
+  return 0;
+}
+
+double Shape::getSide(){
+  return 0;
+}
+
+double Shape::getRadiusX(){
+  return 0;
+}
+
+double Shape::getRadiusY(){
+  return 0;
+}
